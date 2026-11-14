@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>loading</title>
+	<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="stylesheet.css">
+	<style>
+	      #intro {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #232f1e;
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+    #intro.hide { opacity: 0; visibility: hidden; }
+
+    .logo {
+      display: flex;
+      font-family: "Bagel Fat One", "Trebuchet MS", sans-serif;
+      font-size: clamp(3rem, 14vw, 8rem);
+      line-height: 1;
+      color: #fff;
+      animation: pop .5s ease-out 2.5s both;
+    }
+    .logo span {
+      display: inline-block;
+      opacity: 0;
+      animation: fall 1.1s cubic-bezier(.3, 0, .3, 1) both;
+      animation-delay: calc(var(--i) * .2s);
+    }
+    .logo .tan { color: #d4b896; }
+
+    @keyframes fall {
+      0%   { transform: translateY(-110vh); opacity: 1; }
+      55%  { transform: translateY(0);      opacity: 1; }
+      72%  { transform: translateY(-14%);   opacity: 1; }
+      86%  { transform: translateY(0);      opacity: 1; }
+      93%  { transform: translateY(-4%);    opacity: 1; }
+      100% { transform: translateY(0);      opacity: 1; }
+    }
+    @keyframes pop {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .logo, .logo span { animation: none; opacity: 1; }
+      #intro { transition: none; }
+    }
+	</style>
+	<noscript><meta http-equiv="refresh" content="0;url = landing.html"></noscript>
+</head>
+<body>
+	<div id="intro">
+	  <div class="logo" role="img" aria-label="ZooPals">
+		<span style="--i:0">Z</span>
+		<span class="tan" style="--i:1">O</span>
+		<span style="--i:2">O</span>
+		<span style="--i:3">P</span>
+		<span style="--i:4">L</span>
+		<span style="--i:5">E</span>
+
+	   </div>
+	</div>
+	<script>
+		const intro=document.getElementById("intro");
+		setTimeout(() => {
+			intro.classList.add("hide");
+			setTimeout(() => {window.location.href = "landing.html";}, 600);},3600);
+	</script>
+</body>
+</html>

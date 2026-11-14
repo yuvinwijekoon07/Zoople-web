@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ZOOPLE</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="mystyle.css">
+	<style>
+		main{position: relative;z-index: 1;}
+		section{min-height:78vh;display: flex;flex-direction: column;justify-content: Center;
+		padding:130px clamp(24px,8vm,140px) 40px;}
+		section h1, section h2{font-family:"Bagel Fat One","Trebuchet MS",sans-serif;font-weight:400;font-size:clamp(40px,7vw,88px);line-height:1.02;max-width:13ch}
+		section p{margin-top:18px;max-width:44ch;color:var(--muted);font-size:19px;line-height:1.55;font-weight:600}
+		@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+	</style>
+	<script>
+		if (!sessionStorage.getItem("seenIntro")){
+			sessionStorage.setItem("seenIntro", "1");
+			window.location.replace("loading.html");
+		}
+	</script>
+</head>
+<body>
+	<div class="blob b1"></div>
+	<div class="blob b2"></div>
+	<canvas id="hills" aria-hidden="true"></canvas>
+	<header class="nav-wrap">
+		<nav class="nav" id="nav" aria-label="Main">
+			<a class="brand" href="#home" arial-label="zoople home">
+				<span class="badge display" arial-hidden="true">Z</span>
+				<b class = "display">Zoople</b>
+			</a>
+			<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+			<div class="menu" id="menu">
+				<ul class="links" id="links">
+					<span class="pill" id="pill"></span>
+					<li><a class="link active" href="#home" data-k="home">Home</a></li>
+					<li><a class="link" href="#map" data-k="map">Map</a></li>
+					<li><a class="link" href="#quests" data-k="quests">Quests</a></li>
+					<li><a class="link" href="#rewards" data-k="rewards">Rewards</a></li>
+					<li><a class="link" href="#leaderboard" data-k="leaderboard">Leaderboard</a></li>
+					<li><a class="link" href="#animals" data-k="animals">Animals</a></li>
+				</ul>
+				<div class="lang" id="lang">
+					<button id="langBtn" aria-haspopup="true" aria-expanded="false">
+						<svg viewBox ="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+						aria-hidden="true"><circle cx="12"cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+					</button>
+					<ul role ="menu">
+						<li><button role="menuitemradio" aria-checked="true" data-l="en" data-s="EN">English</button></li>
+         	 			<li><button role="menuitemradio" aria-checked="false" data-l="si" data-s="සිං">සිංහල</button></li>
+          				<li><button role="menuitemradio" aria-checked="false" data-l="ta" data-s="த">தமிழ்</button></li>
+					</ul>
+				</div>
+				<a class="cta" href="#signup" data-k="signup">Sign Up</a>
+			</div>
+			
+		</nav>
+
+	</header>
+	<main>
+		<section id="home"><h1>Explore the zoo. Collect the fun.</h1><p>Scan, learn and earn points at every exhibit.</p></section>
+		<section id="map"><h2>Clear the fog</h2><p>Your map reveals itself as you walk.</p></section>
+		<section id="quests"><h2>Quests</h2>
+			<p>Whos are the mamals here?</p>
+			<div class="phone" aria-hidden="true">
+				<div class="screen">
+					<div class="app-head">
+						<div>
+							<b>Today's Quests</b>
+							<small>Zoople</small>
+						</div>
+						<span class="pts-chip"><span id="pts">0</span> pts</span>
+					</div>
+
+					<ul class="quest-list" id="questList"></ul>
+
+					<div class="toast" id="toast"></div>
+				</div>
+			</div>
+		</section>
+		<section id="rewards"><h2>Rewards</h2><p>Spin the wheel for ice cream, drinks and discounts.</p></section>
+		<section id="leaderboard"><h2>Leaderboard</h2><p>See how you and your group rank.</p></section>
+		<section id="animals"><h2>Animals</h2><p>Facts and audio guides for every exhibit.</p></section>
+		<section id="signup"><h2>Sign up</h2><p>Create your account in under a minute.</p></section>
+		<section id="features" class="features">
+			<h2>Features</h2>
+			<p class="features-sub">Everything that makes a zoo visit more fun.</p>
+
+			<div class="feature-grid">
+
+				<article class="feature-card">
+				<h3>QR Exhibit Info</h3>
+				<p>Scan the code at any exhibit to see facts and hear an audio guide about the animal.</p>
+				</article>
+
+				<article class="feature-card">
+				<h3>Fog-of-War Map</h3>
+				<p>Explore the zoo and watch the map clear as you discover new areas.</p>
+				</article>
+
+				<article class="feature-card">
+				<h3>Custom Routes</h3>
+				<p>Pick your favourite animal types and get a route that doesn't miss key exhibits.</p>
+				</article>
+
+				<article class="feature-card">
+				<h3>Quests &amp; Rankings</h3>
+				<p>Complete challenges, earn points and climb the leaderboard.</p>
+				</article>
+
+				<article class="feature-card">
+				<h3>Gacha Rewards</h3>
+				<p>Spend your points on a wheel spin for treats and discounts.</p>
+				</article>
+
+				<article class="feature-card">
+				<h3>Audio Guides</h3>
+				<p>Listen in Sinhala, Tamil or English while you watch the animals.</p>
+				</article>
+
+			</div>
+		</section>
+	</main>
+
+<footer class="footer">
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<a class="f-logo" href="#home">
+				<span class="f badge">Z</span>
+				<b>Zoople</b>
+			</a>
+			<p>The all in one zoo companion, were here to make your visit more enjoyable.</p>
+			<div class="socials">
+				<a href="#" aria-label="Instagram">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>
+				</a>
+				<a href="#" aria-label="in">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+				</a>
+				<a href="#" aria-label="Email">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>
+				</a>
+			</div>
+		</div>
+		<!-- section 2 -->
+		<div class="footer-col">
+			<h4>Where</h4>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#map">Map</a></li>
+				<li><a href="#quests">Quests</a></li>
+				<li><a href="#rewards">Rewards</a></li>
+			</ul>
+		</div>
+		<!-- section 3 -->
+		<div class="footer-col">
+			<h4>Features</h4>
+			<ul>
+				<li><a href="#leaderboard">Fog-Map</a></li>
+				<li><a href="#animals">Audio Guides</a></li>
+				<li><a href="#signup">Random Rewards</a></li>
+				<li><a href="#">Group Leaderboards</a></li>
+			</ul>
+		</div>
+		<!-- section 4 -->
+		<div class="footer-col">
+			<h4>Contact</h4>
+			<ul>
+				<li><a href="#">Instagram</a></li>
+				<li><a href="#">LinkedIn</a></li>
+				<li><a href="#">Email</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy;Zoople. All rights reserved.</p>
+
+</footer>
+ 
+<script src="mystyle.js"></script>
+</body>
+</html>
