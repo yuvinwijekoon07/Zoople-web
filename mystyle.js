@@ -20,9 +20,9 @@
   /* language dropdown + translated labels */
   var lang=document.getElementById('lang'), lb=document.getElementById('langBtn');
   var T={
-    en:{home:'Home',map:'Map',quests:'Quests',rewards:'Rewards',leaderboard:'Leaderboard',animals:'Animals',signup:'Sign Up'},
-    si:{home:'මුල් පිටුව',map:'සිතියම',quests:'අභියෝග',rewards:'ත්‍යාග',leaderboard:'ප්‍රමුඛ ලැයිස්තුව',animals:'සතුන්',signup:'ලියාපදිංචි වන්න'},
-    ta:{home:'முகப்பு',map:'வரைபடம்',quests:'சவால்கள்',rewards:'பரிசுகள்',leaderboard:'தரவரிசை',animals:'விலங்குகள்',signup:'பதிவு செய்'}
+    en:{home:'Home',problem:'Problem',aim:'Aim',team:'Team',signup:'Sign Up'},
+    si:{home:'මුල් පිටුව',problem:'ගැටලුව',aim:'අරමුණ',team:'කණ්ඩායම',signup:'ලියාපදිංචි වන්න'},
+    ta:{home:'முகப்பு',problem:'சிக்கல்',aim:'நோக்கம்',team:'குழு',signup:'பதிவு செய்'}
   };
   function setLang(l,s){
     document.documentElement.lang=l;

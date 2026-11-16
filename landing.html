@@ -7,13 +7,13 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="mystyle.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Modak&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
 	<style>
 		main{position: relative;z-index: 1;}
 		section{min-height:78vh;display: flex;flex-direction: column;justify-content: Center;
-		padding:130px clamp(24px,8vm,140px) 40px;}
-		section h1, section h2{font-family:"Bagel Fat One","Trebuchet MS",sans-serif;font-weight:400;font-size:clamp(40px,7vw,88px);line-height:1.02;max-width:13ch}
+		padding:130px clamp(24px,8vw,140px) 40px;
 		section p{margin-top:18px;max-width:44ch;color:var(--muted);font-size:19px;line-height:1.55;font-weight:600}
-		@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+		@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}}
 	</style>
 	<script>
 		if (!sessionStorage.getItem("seenIntro")){
@@ -30,23 +30,22 @@
 		<nav class="nav" id="nav" aria-label="Main">
 			<a class="brand" href="#home" arial-label="zoople home">
 				<span class="badge display" arial-hidden="true">Z</span>
-				<b class = "display">Zoople</b>
+				<b class = "display">Z<span class="accent-letter">o</span>ople</b>
 			</a>
 			<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 			<div class="menu" id="menu">
 				<ul class="links" id="links">
 					<span class="pill" id="pill"></span>
 					<li><a class="link active" href="#home" data-k="home">Home</a></li>
-					<li><a class="link" href="#map" data-k="map">Map</a></li>
-					<li><a class="link" href="#quests" data-k="quests">Quests</a></li>
-					<li><a class="link" href="#rewards" data-k="rewards">Rewards</a></li>
-					<li><a class="link" href="#leaderboard" data-k="leaderboard">Leaderboard</a></li>
-					<li><a class="link" href="#animals" data-k="animals">Animals</a></li>
+					<li><a class="link" href="#problems" data-k="problem">Problem</a></li>
+					<li><a class="link" href="#aim" data-k="aim">Aim</a></li>
+					<li><a class="link" href="#team" data-k="team">Team members</a></li>
+
 				</ul>
 				<div class="lang" id="lang">
 					<button id="langBtn" aria-haspopup="true" aria-expanded="false">
 						<svg viewBox ="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-						aria-hidden="true"><circle cx="12"cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+						aria-hidden ="true"><circle cx="12"cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
 					</button>
 					<ul role ="menu">
 						<li><button role="menuitemradio" aria-checked="true" data-l="en" data-s="EN">English</button></li>
@@ -54,39 +53,75 @@
           				<li><button role="menuitemradio" aria-checked="false" data-l="ta" data-s="த">தமிழ்</button></li>
 					</ul>
 				</div>
-				<a class="cta" href="#signup" data-k="signup">Sign Up</a>
 			</div>
 			
 		</nav>
 
 	</header>
 	<main>
-		<section id="home"><h1>Explore the zoo. Collect the fun.</h1><p>Scan, learn and earn points at every exhibit.</p></section>
-		<section id="map"><h2>Clear the fog</h2><p>Your map reveals itself as you walk.</p></section>
-		<section id="quests"><h2>Quests</h2>
-			<p>Whos are the mamals here?</p>
-			<div class="phone" aria-hidden="true">
-				<div class="screen">
-					<div class="app-head">
-						<div>
-							<b>Today's Quests</b>
-							<small>Zoople</small>
-						</div>
-						<span class="pts-chip"><span id="pts">0</span> pts</span>
-					</div>
+		<section id="home"><h1>Expl<span class="accent-letter">o</span>re the z<span class="accent-letter">o</span>o. C<span class="accent-letter">o</span>llect the fun.</h1><p>Scan, learn and earn points at every exhibit.</p></section>
+		<section id="problem" class="features">
+			<h2>The pr<span class="accent-letter">o</span>blem</h2>
+			<p class="features-sub">A zoo visit is memorable, but it is rarely interactive.</p>
+					<h3>Passive visits</h3>
+					<p>Younger visitors are used to fast, interactive apps. A normal zoo visit is "look and walk", and the information boards are easy to skip.</p>
+					<br>
+					<h3>One and done</h3>
+					<p>Many people treat the zoo as a checklist, look at the animal and leave without learning anything new, so there is little reason to return.</p>
+					<br>
+					<h3>No live visitor data</h3>
+					<p>Zoos manage large spaces and big crowds without real-time data, so they can't tell which exhibits hold attention or where people bunch up.</p>
+					<br>
+					<h3>Hard to place staff</h3>
+					<p>Without that data it is difficult to put staff where they are needed or to steer crowds away from the busiest areas.</p>
 
-					<ul class="quest-list" id="questList"></ul>
+		</section>
 
-					<div class="toast" id="toast"></div>
-				</div>
+		<section id="aim" class="features">
+			<h2>O<span class="accent-letter">u</span>r aim</h2>
+			<p class="features-sub">Turn a zoo visit into something people want to repeat.</p>
+			<div class="feature-grid wide-last">
+				<article class="feature-card">
+					<h3>Boost engagement</h3>
+					<p>Scanning a QR code at an exhibit brings up facts, quests and points, so visitors explore actively instead of just looking.</p>
+				</article>
+				<article class="feature-card">
+					<h3>Increase retention</h3>
+					<p>Points, quests and events turn the visit into a game and give people a reason to come back.</p>
+				</article>
+				<article class="feature-card">
+					<h3>Raise lifetime value</h3>
+					<p>Rewards, challenges and quizzes keep visitors exploring more exhibits and spending more time at the zoo.</p>
+				</article>
+				<article class="feature-card">
+					<h3>Bite-sized learning</h3>
+					<p>Short audio guides and fun facts let visitors learn passively while they watch the animals.</p>
+				</article>
+				<article class="feature-card">
+					<h3>Data for the zoo</h3>
+					<p>QR scans, exhibit visits and route choices feed dashboards that help management understand visitor movement and plan staffing.</p>
+				</article>
 			</div>
 		</section>
-		<section id="rewards"><h2>Rewards</h2><p>Spin the wheel for ice cream, drinks and discounts.</p></section>
-		<section id="leaderboard"><h2>Leaderboard</h2><p>See how you and your group rank.</p></section>
-		<section id="animals"><h2>Animals</h2><p>Facts and audio guides for every exhibit.</p></section>
-		<section id="signup"><h2>Sign up</h2><p>Create your account in under a minute.</p></section>
+
+		<section id="app" class="showcase">
+			<h2>O<span class="accent-letter">u</span>r m<span class="accent-letter">o</span>bile App</h2>
+			<img src="images/zoople-app.png" alt="The zoo app welcome screen" loading="lazy">
+		</section>
+
+		<section id="team" class="features">
+			<h2>T<span class="accent-letter">e</span>am m<span class="accent-letter">e</span>mbers</h2>
+			<p class="features-sub">Group SE-02, Agile Team Project.</p>
+			<div class="team-grid">
+				<article class="member"><img class="avatar" src="images/Adil.png" alt="Adil Senthula Thinal Jayasinghe"><h3>Adil Senthula Thinal Jayasinghe</h3></article>
+				<article class="member"><img class="avatar" src="images/yuvin.png" alt="Yuvin Vindula Wijekoon"><h3>Yuvin Vindula Wijekoon</h3></article>
+				<article class="member"><img class="avatar" src="images/tajeeka.jpg" alt="R.A. Tajeeka Sithmini Perera"><h3>R.A. Tajeeka Sithmini Perera</h3></article>
+				<article class="member"><img class="avatar" src="images/jayani.jpg" alt="Madduma Archarige Jayani Sulakna Paulus"><h3>Madduma Archarige Jayani Sulakna Paulus</h3></article>
+				<article class="member"><img class="avatar" src="images/kod.jpg" alt="K.O.D. Fernando"><h3>K.O.D. Fernando</h3></article>
+			</div>
+		</section>
 		<section id="features" class="features">
-			<h2>Features</h2>
+			<h2>Fe<span class="accent-letter">a</span>tures</h2>
 			<p class="features-sub">Everything that makes a zoo visit more fun.</p>
 
 			<div class="feature-grid">
@@ -130,7 +165,7 @@
 		<div class="footer-brand">
 			<a class="f-logo" href="#home">
 				<span class="f badge">Z</span>
-				<b>Zoople</b>
+				<b>Z<span class="accent-letter">o</span>ople</b>
 			</a>
 			<p>The all in one zoo companion, were here to make your visit more enjoyable.</p>
 			<div class="socials">
@@ -150,9 +185,9 @@
 			<h4>Where</h4>
 			<ul>
 				<li><a href="#home">Home</a></li>
-				<li><a href="#map">Map</a></li>
-				<li><a href="#quests">Quests</a></li>
-				<li><a href="#rewards">Rewards</a></li>
+				<li><a href="#problem">Problem</a></li>
+				<li><a href="#aim">Aim</a></li>
+				<li><a href="#team">Team</a></li>
 			</ul>
 		</div>
 		<!-- section 3 -->
@@ -176,7 +211,7 @@
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<p>&copy;Zoople. All rights reserved.</p>
+		<p>&copy;Zoople. All rights reserved.</p></div>
 
 </footer>
  

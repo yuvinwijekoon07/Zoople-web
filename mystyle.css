@@ -194,7 +194,7 @@ body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,-apple-s
 .feature-card {
   padding: 32px;
   border-radius: 28px;
-  background: #C4C36F;
+  background: #D1BB9D;
   border: 1px solid var(--hover);
   box-shadow: 0 6px 24px rgba(43, 80, 23, 0.08);
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
@@ -219,13 +219,81 @@ body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,-apple-s
   color: #131313;
 }
 
-/* Phone type screens */
-.quests {
-  min-height: auto; 
-  align-items: center;           
-  text-align: center;
-  padding: 100px clamp(24px, 8vw, 140px);
+/*Aim and team*/
+.wide-last .feature-card:last-child:nth-child(odd){grid-column:1/-1}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.member{padding:32px 24px;
+  border-radius:28px;
+  background:#C4C36F;
+  border:1px solid var(--hover);
+  text-align:center;
+  box-shadow:0 6px 24px rgba(43,80,23,.08);
+  transition:transform .25s,box-shadow .25s,border-color .25s}
+.member:hover{transform:translateY(-8px);border-color:var(--olive);box-shadow:0 18px 40px rgba(43,80,23,.18)}
+.avatar{
+  width:110px;
+  height:110px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  display:block;
+  background:#232f1e;
+  border:4px solid #232f1e;
 }
-.quests h2 { max-width: none; }
-.quests p { margin-left: auto; margin-right: auto; }
-.quests .phone { margin-top: 48px; }
+.member h3{margin:0;
+  font-size:18px;
+  line-height:1.3;
+  color:#131313}
+
+@media (max-width:700px){.feature-grid{grid-template-columns:1fr}}
+
+/* these override the general "section p" style */
+.auth-form .msg{margin:0;max-width:none;min-height:20px;text-align:center;font-size:14px;font-weight:700;color:#ffb4a6}
+.auth-form .msg.ok{color:#c9e38a}
+.auth-form .switch{margin:0;max-width:none;text-align:center;font-size:14px;font-weight:600;color:rgba(246,251,227,.8)}
+.auth-form .switch a{color:#d4b896;font-weight:800}
+
+/* Home getting to the center */
+#home{
+  align-items: center;
+  text-align: center;
+}
+/*Font type */
+section h1, section h2{
+  font-family:"Modak","Trebuchet MS",sans-serif;
+  font-weight:400;
+
+  font-size:clamp(40px,7vw,88px);
+  line-height:1.25;
+  max-width:13ch
+}
+.display{font-family:"Modak","Trebuchet MS",system-ui,sans-serif;font-weight:400}
+.accent-letter { color: #d4b896; }
+
+/* Phone image */
+.showcase{
+  min-height:auto;
+  align-items:center;      /* centres the heading and image horizontally */
+  text-align:center;
+  padding:60px clamp(24px,8vw,140px);
+}
+.showcase h2{margin-bottom:32px}
+.showcase img{
+  width:100%;
+  max-width:380px;         /* change this to make it bigger or smaller */
+  height:auto;
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,45));
+}
+
+/*Adjusting the size of description of the problem*/
+#problem h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin-top: 12px;
+}
+#problem p {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.6;
+  max-width: 70ch;
+}
+#problem .features-sub {
+  font-size: clamp(20px, 2.2vw, 26px);
+}
