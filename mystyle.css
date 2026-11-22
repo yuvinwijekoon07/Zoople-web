@@ -101,8 +101,9 @@ body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,-apple-s
   gap: 14px;
   color: #fff;
   text-decoration: none;
-  font-family: "Bagel Fat One", sans-serif;
-  font-size: 28px;
+  font-family: "Modak", "Trebuchet MS", sans-serif;
+  font-size: 32px;
+  line-height: 1.2;
 }
 .f-badge {
   width: 52px;
@@ -112,6 +113,7 @@ body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,-apple-s
   display: grid;
   place-items: center;
   font-size: 26px;
+  line-height: 1;
 }
 .footer-brand p {
   margin: 22px 0 28px;
@@ -296,4 +298,75 @@ section h1, section h2{
 }
 #problem .features-sub {
   font-size: clamp(20px, 2.2vw, 26px);
+}
+/* ---------- team section ---------- */
+.team-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;      /* centres the last card too */
+  gap:28px;
+}
+
+.member{
+  position:relative;
+  flex:0 1 280px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:48px 24px 32px;
+  overflow:hidden;
+  text-align:center;
+  border-radius:32px;
+  background:linear-gradient(160deg,#d9d88f,#bcbb62);   /* soft gradient instead of flat colour */
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  transition:transform .3s, box-shadow .3s;
+}
+.member::before{               /* dark band behind the top of the photo */
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:92px;
+  background:#232f1e;
+}
+.member:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 44px rgba(0,0,0,.35);
+}
+
+/* photo */
+.avatar{
+  position:relative;           /* sits above the dark band */
+  z-index:1;
+  width:140px;
+  height:140px;
+  margin:0 auto 20px;
+  display:block;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:50% 20%;     /* keeps heads in frame */
+  border:5px solid #f6fbe3;    /* cream ring */
+  background:#232f1e;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  transition:transform .3s;
+}
+.member:hover .avatar{transform:scale(1.06)}
+
+/* name */
+.member h3{
+  position:relative;
+  z-index:1;
+  margin:0;
+  min-height:2.6em;            /* names with 1 or 2 lines line up across cards */
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  font-size:19px;
+  line-height:1.3;
+  text-wrap:balance;
+  color:#1d2a16;
+}
+
+@media (max-width:560px){
+  .member{flex-basis:100%}
 }
